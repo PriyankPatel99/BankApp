@@ -1,14 +1,16 @@
+import 'package:bankapp/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'home_page.dart';
-import 'login_page.dart';
+
+import 'pages/card_page.dart';
+import 'pages/login_page.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarBrightness: Brightness.light,
       statusBarIconBrightness: Brightness.light,
-      statusBarColor: Colors.deepPurple));
+      statusBarColor: Color(0xFF3311B92)));
   runApp(const MyApp());
 }
 
@@ -27,7 +29,8 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       getPages: [
         GetPage(name: "/", page: () => HomePage()),
-        GetPage(name: "/Login", page: () => Login())
+        GetPage(name: "/Login", page: () => Login()),
+        GetPage(name: "/CardPage", page: () => CardPage())
       ],
     );
   }
